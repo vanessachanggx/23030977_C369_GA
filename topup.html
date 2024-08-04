@@ -9,15 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif; /* Set font to Arial */
             background: linear-gradient(135deg, #a3c4f3, #1a73e8);
-            color: #000;
+            color: #000; /* Text color */
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh; /* Ensure body covers full viewport height */
             display: flex;
             align-items: center;
             justify-content: center;
+
+        }
+        main {
+            flex: 1; /* Expands to fill space */
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Allows stacking of items */
+            justify-content: center; /* Center items vertically if needed */
         }
         .logo {
             position: absolute;
@@ -35,6 +43,7 @@
             padding: 20px;
             text-align: center;
             margin-bottom: 200px;
+            flex: 1; /* Allow it to grow and fill available space */
         }
         .header {
             position: fixed;
@@ -54,10 +63,11 @@
             border-radius: 30px;
             font-size: 1em;
             text-decoration: none;
-            position: absolute;
+            position: absolute; /* Use fixed positioning */
             top: 20px;
             left: 20px;
             transition: background 0.3s;
+           
         }
         .btn1:hover {
             background-color: #a9a9a9;
@@ -65,7 +75,7 @@
         .topup {
             font-size: 2rem;
             color: #000;
-            margin-top: 65px;
+            margin-top: 80px;
         }
         .minimum {
             text-align: left;
@@ -78,6 +88,7 @@
             padding: 40px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             margin-top: 100px;
+
         }
         .amount-buttons {
             display: flex;
@@ -96,6 +107,25 @@
         .amount-buttons button:hover {
             background-color: #a9a9a9;
         }
+        /* Styling for the input field */
+        #customAmount {
+            background: white;
+            color: black;
+            border: 2px solid;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1em;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Styling for the label */
+        label[for="customAmount"] {
+            font-size: 1.2em; /* Adjust font size as needed */
+            color: #000; /* Label color */
+            display: block; /* Makes the label take up the full width */
+            margin-bottom: 5px; /* Space between label and input */
+        }
         .paynow-container, .card-info {
             display: none;
         }
@@ -113,7 +143,7 @@
         }
         .top-up-button {
             display: none;
-            margin-left: 170px;
+            margin-left: 225px;
             margin-top: 20px;
             background: white;
             color: black;
@@ -123,7 +153,8 @@
             font-size: 1em;
             text-decoration: none;
             cursor: pointer;
-            width: 50%;
+            width: 34%;
+
         }
         .top-up-button:hover {
             background-color: #a9a9a9;
@@ -142,6 +173,7 @@
             height: auto;
             overflow: auto;
             z-index: 10000; /* Ensure it overlays the rest of the page */
+            margin-bottom: 100px; /* Added bottom margin to ensure enough space */
         }
         .card-info-logo {
             margin-right: 20px;
@@ -205,6 +237,7 @@
             max-width: 400px;
             padding: 20px;
             box-sizing: border-box;
+           
         }
         .add-card label,
         .add-card input {
@@ -232,6 +265,17 @@
         button:hover {
             background-color: #a9a9a9;
         }
+        .btn4 {
+            background: white;
+            color: black;
+            border: 2px solid;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1em;
+            text-decoration: none;
+            margin-bottom: 0; /* Adjust or remove if not needed */
+            flex: 1;
+        }
         .nav {
             justify-content: center;
         }
@@ -243,7 +287,6 @@
             justify-content: space-around;
             padding: 10px 0;
             color: black;
-            margin-left: 180px;
         }
         .footer-nav a {
             text-decoration: none;
@@ -278,13 +321,14 @@
     </style>
 </head>
 <body>
+    <main>
     <div class="container">
-        <div class="header">
-            <div class="back">
-                <a href="firstpage.html" class="btn1">Back</a>
-            </div>
-            <h3 class="topup">Top Up</h3>
-        </div>
+        <a href="firstpage.html" class="btn1">Back</a>
+    <div class="logo">
+        <i class="fas fa-plane-departure"></i>
+        <p class="travelfree">TravelFree</p>
+    </div>
+        <h3 class="topup">Top Up</h3>
         <div class="form-container">
             <div class="logo">
                 <i class="fas fa-plane-departure"></i>
@@ -330,22 +374,26 @@
             <div id="savedCardsList">
                 <p>No saved cards available.</p>
             </div>
-            <button onclick="showCardPopup()">Add Card</button>
+            <button class="btn4" onclick="showCardPopup()">Add Card</button>
         </div>
-        <div class="nav">
-        <div class="footer-nav">
-            <a href="firstpage.html"><i class="fas fa-plane"></i>Home</a>
-            <a href="profile.html"><i class="fa-regular fa-user"></i>Profile</a>
-            <div class="dropdown">
-                <a href="#" class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis"></i> More
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="aboutUs.html">About Us</a></li>
-                    <li><a class="dropdown-item" href="card.html">Card</a></li>
-                    <li><a class="dropdown-item" href="index.html">Log Out</a></li>
-                </ul>
-            </div>
+    </main>
+        <footer id="footer-nav" class="footer-nav">
+            <div class="footer-nav">
+                <a href="firstpage.html"><i class="fas fa-plane"></i>Home</a>
+                <a href="profile.html"><i class="fa-regular fa-user"></i>Profile</a>
+                
+                <div class="dropdown">
+                    <a href="#" class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-ellipsis"></i> More
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="aboutUs.html">About Us</a></li>
+                        <li><a class="dropdown-item" href="card.html">Card</a></li>
+                        <li><a class="dropdown-item" href="index.html">Log Out</a></li>
+                    </ul>
+                </div>
+        </footer>
+    
         </div>
         <!-- Card popup container -->
         <div id="cardPopupContainer" class="popup-container">
@@ -366,7 +414,7 @@
                         <label for="cvv">CVV</label>
                         <input type="text" id="cvv" name="cvv" required placeholder="Enter CVV">
                         
-                        <button type="submit" style="background: lightblue;">Save Card</button>
+                        <button type="submit" class="btn4" style="background-color:rgb(125, 196, 155);">Save Card</button>
                     </form>
                 </div>
             </div>
