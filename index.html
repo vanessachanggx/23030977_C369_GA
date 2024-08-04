@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelFree</title>
+    <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #a3c4f3, #1a73e8);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            background:  rgba(255, 255, 255, 0.619);
+            color: black;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: #000;
+        }
+        .travelfree {
+            font-size: 0.5em; /* Adjust the font size to 0.5em */
+            margin: 0; /* Optional: Remove any default margin for better alignment */
+        }
+
+        h1, h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 4em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .btn, .btn2, .btn1 {
+            background: white;
+            color: black;
+            border: 2px solid #000;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 1em;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .btn:hover, .btn2:hover, .btn1:hover {
+            background-color: #a9a9a9;
+        }
+
+        .welcome-section img {
+            width: 40px;
+            margin-bottom: 20px;
+        }
+        .exchange-section img {
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showExchangeSection() {
+            document.getElementById('welcome').classList.add('hidden');
+            document.getElementById('exchange').classList.remove('hidden');
+        }
+
+        function showWelcomeSection() {
+            document.getElementById('exchange').classList.add('hidden');
+            document.getElementById('welcome').classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-plane-departure"></i>
+            <p class="travelfree">TravelFree</p >
+        </div>
+        <!-- Welcome Section -->
+        <div class="welcome-section" id="welcome">
+            <h2>Welcome to</h2>
+            <h1><b>TravelFree</b></h1>
+            <img src="pictures/flag.png" alt="Singapore Flag"> Singapore
+            <p>You will need an NRIC or a FIN to apply for a TravelFree account</p>
+            <a href="#" class="btn" onclick="showExchangeSection()">Continue</a>
+        </div>
+        <!-- Exchange Section -->
+        <div class="exchange-section hidden" id="exchange">
+            <a href="#" class="btn1" onclick="showWelcomeSection()">Back</a>
+            <img src="pictures/currency_icon.png" alt="Currency Exchange Icon">
+            <h2><b>Exchange Currencies with No Additional Fees!</b></h2>
+            <p>Check out and lock in the best rates in real time, anytime!<br>
+            Exchange at your convenience with no hidden fees!</p>
+            <br>
+            <a href= "singpass.html" class="btn2">Get Started</a>
+        </div>
+    </div>
+</body>
+</html>
